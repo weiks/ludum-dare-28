@@ -49,6 +49,11 @@ MouseGame.MainMenu = function (game) {
     this.game = game;
 };
 
+window.onQuartersCallback = function(data){ 
+  console.log(data.txId);
+  this.game.state.start('levelselector');  
+}
+
 MouseGame.MainMenu.prototype = {
     create: function () {
         "use strict";
@@ -106,8 +111,8 @@ MouseGame.MainMenu.prototype = {
 
     startGame: function() {
         "use strict";
-
-        this.game.state.start('levelselector');
+	document.querySelectorAll('.buy-quarters-button')[0].click();	
+       // this.game.state.start('levelselector');
     },
 
     showCredits: function() {
