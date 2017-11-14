@@ -51,7 +51,9 @@ MouseGame.MainMenu = function (game) {
 
 window.onQuartersCallback = function(data){ 
   console.log(data.txId);
-  this.game.state.start('levelselector');  
+  if (data.taxId = undefined) {
+     this.game.state.start('levelselector');  
+  }
 }
 
 MouseGame.MainMenu.prototype = {
